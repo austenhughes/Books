@@ -3,10 +3,12 @@ const db = require("../models");
 
 // This file empties the Books collection and inserts the books below
 
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
-);
+await mongoose.connect('mongodb://localhost/my_database', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+});
 
 const bookSeed = [
   {
