@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-await mongoose.connect('mongodb://localhost/reactreadinglist', {
+mongoose.connect('mongodb://localhost/reactreadinglist', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

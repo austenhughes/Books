@@ -3,7 +3,7 @@ const db = require("../models");
 
 // This file empties the Books collection and inserts the books below
 
-await mongoose.connect('mongodb://localhost/reactreadinglist', {
+mongoose.connect('mongodb://localhost/reactreadinglist', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
