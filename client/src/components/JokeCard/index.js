@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+// import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
+import SaveToLibraryBtn from "../SaveToLibraryBtn";
 
 const useStyles = makeStyles({
   root: {
@@ -26,29 +27,21 @@ const useStyles = makeStyles({
 
 export default function JokeCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  // const bull = <span className={classes.bullet}>•</span>;
   
   return (
     <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+      <CardContent className="cardContent">
+        <div className="jokeTitle"> Joke title </div>
+        <div className="part1"> part 1 </div>
+        <div className="part2"> part 2 </div>
+        <div className="time"> time </div>
+        <div className="username"> Username </div>
       </CardContent>
-      <CardActions>
+      <SaveToLibraryBtn />
+      {/* <CardActions>
         <Button size="small">Learn More</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
