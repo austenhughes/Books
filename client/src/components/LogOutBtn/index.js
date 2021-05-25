@@ -3,11 +3,8 @@ import { Button } from '@material-ui/core';
 
 function LogOutBtn(props) {
   return (
-    <Button 
-        onClick={props.handleFormSubmitLogOut} 
-        className="btn btn-primary LogOutBtn">
-        Log out
-    </Button>
+      <Button href="/login" target="_"><input 
+      type="button" value="Log out"/></Button>
   );
 }
 

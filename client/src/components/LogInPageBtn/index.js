@@ -3,11 +3,8 @@ import { Button } from '@material-ui/core';
 
 function LogInPageBtn(props) {
   return (
-    <Button 
-        onClick={props.handleFormSubmitLogInPage} 
-        className="btn btn-primary LogInPageBtn">
-        Log in
-    </Button>
+    <Button href="/login" target="_"><input 
+    type="button" value="Log in"/></Button>
   );
 }
 

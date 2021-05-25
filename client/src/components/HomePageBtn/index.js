@@ -3,11 +3,8 @@ import { Button } from '@material-ui/core';
 
 function HomePageBtn(props) {
   return (
-    <Button 
-        onClick={props.handleFormSubmitHome} 
-        className="btn btn-primary homePageBtn">
-        Home
-    </Button>
+    <Button href="/Home" target="_"><input 
+    type="button" value="Home"/></Button>
   );
 }
 
