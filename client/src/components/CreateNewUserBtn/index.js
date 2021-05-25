@@ -3,11 +3,8 @@ import { Button } from '@material-ui/core';
 
 function CreateNewUserBtn(props) {
   return (
-    <Button 
-        onClick={props.handleFormSubmitCreateNewUser} 
-        className="btn btn-primary createNewUserBtn">
-        New User
-    </Button>
+      <Button href="/newUser" target="_"><input 
+      type="button" value="New User"/></Button>
   );
 }
 
