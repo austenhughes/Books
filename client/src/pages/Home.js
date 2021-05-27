@@ -10,6 +10,23 @@ import Container from "../components/Container";
 import Nav from "../components/Nav";
 
 function Home() {
+
+  // // Setting our component's initial state
+  // const [jokes, setJokes] = useState([])
+  
+  // // Load all books and store them with setBooks
+  // useEffect(() => {
+  //   loadJokes()
+  // }, [])
+
+  // // Loads all books and sets them to books
+  // function loadJokes() {
+  //   API.getJokes()
+  //     .then(res => 
+  //       setJokes(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // };
   
   return <div>
   <Header />
@@ -19,9 +36,7 @@ function Home() {
   <LogOutBtn />
   </Nav> 
   <Container>
-  <JokeCard>
-  {/* <SaveToLibraryBtn /> */}
-  </JokeCard>
+  <JokeCard />
   </Container>
   <Footer />
   </div>       

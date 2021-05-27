@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect('mongodb://localhost/reactreadinglist', {
+mongoose.connect('mongodb://localhost/jokeData', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
