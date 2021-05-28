@@ -18,13 +18,7 @@ const jokeSeed = [
     partOne: 'part 1',
     partTwo:'part 2'
   },
-  {
-    userID: "1",
-    jokeID: 1,
-    joketype:'Knock Knock',
-    partOne: 'part 1',
-    partTwo:'part 2'
-  }
+ 
 ];
 
 db.Joke.remove({})

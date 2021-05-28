@@ -9,12 +9,6 @@ const jokeSchema = new Schema({
   partTwo: { type: String },
 });
 
-// const bookSchema = new Schema({
-//   title: { type: String, required: true },
-//   author: { type: String, required: true },
-//   synopsis: String,
-//   date: { type: Date, default: Date.now },
-// });
 
 const Joke = mongoose.model("Joke", jokeSchema);
 
