@@ -72,7 +72,7 @@ function deleteJoke(_id) {
     </CardContent>
 
       <Button 
-        onClick={deleteJoke(joke._id)} 
+        onClick={ () => deleteJoke(joke._id)} 
         className="btn btn-primary DeleteBtn">
         Delete
       </Button>
