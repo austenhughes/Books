@@ -1,15 +1,22 @@
 import React from "react";
 import { Button } from '@material-ui/core';
-import "./style.css";
 
-// The ...props means, spread all of the passed props onto this element
-// That way we don't have to define them all individually
+// import API from "../../utils/API";
+
 function DeleteBtn(props) {
+
+  function deleteJoke(id) {
+    console.log(id)
+      API.deleteJokes(id)
+        .catch(err => console.log(err));
+    }
+
   return (
-    // <span className="delete-btn" {...props} role="button" tabIndex="0">
-    //   ✗
-    // </span>
-    <Button color="primary">Delete</Button>
+    <Button 
+        onClick={deleteJoke(props.joke._id)} 
+        className="btn btn-primary DeleteBtn">
+        Delete
+    </Button>
   );
 }
 

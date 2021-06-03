@@ -1,37 +1,91 @@
-import React from "react";
+// import React from "react";
+import React, { useState} from "react";
+import { Button } from '@material-ui/core';
+
+import API from "../../utils/API";
 
 function NewJokeForm(props) {
+
+  // const [jokes, setJokes] = useState([])
+  const [newJoke, setNewJoke] = useState({})
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setNewJoke({...newJoke, [name]: value})
+    };
+
+  function handleFormSubmitNewJoke(event) {
+      event.preventDefault();
+      console.log("Hi from over here")  
+      // if (newJoke.partOne) {
+        API.saveJokes({
+          userID: newJoke.userID,
+          jokeID: newJoke.jokeID,
+          joketype: newJoke.joketype,
+          partOne: newJoke.partOne,
+          partTwo: newJoke.partTwo
+        })
+        // .then(res => loadJokes())
+        .catch(err => console.log(err));
+      // }
+    };
+
   return (
     <form>
       <div className="newJokeForm">
         <input
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
           value={props.value}
-          name="title"
+          name="userID"
           type="text"
           className="form-control"
-          placeholder="Title"
-          id="title"
+          placeholder="User ID"
+          id="userID"
         />
         <input
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
           value={props.value}
-          name="part1"
+          name="jokeID"
+          type="text"
+          className="form-control"
+          placeholder="Joke ID"
+          id="jokeID"
+        />
+        <input
+          onChange={handleInputChange}
+          value={props.value}
+          name="joketype"
+          type="text"
+          className="form-control"
+          placeholder="Joke type"
+          id="joketype"
+        />
+        <input
+          onChange={handleInputChange}
+          value={props.value}
+          name="partOne"
           type="text"
           className="form-control"
           placeholder="Part 1"
-          id="Part1"
+          id="PartOne"
         />
         <input
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
           value={props.value}
-          name="part2"
+          name="partTwo"
           type="text"
           className="form-control"
           placeholder="Part 2"
-          id="Part2"
+          id="PartTwo"
         />
       </div>
+
+      <Button 
+        onClick={handleFormSubmitNewJoke} 
+        className="btn btn-primary SaveNewJokeBtn">
+        SAVE
+      </Button>
+
     </form>
   );
 }
