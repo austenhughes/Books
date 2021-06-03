@@ -17,20 +17,25 @@ function Home() {
   const [jokes, setJokes] = useState([])
   
   // Load all jokes and store them with setJokes
-  useEffect(() => {
+  useEffect(async () => {
     console.log("hi")
-    loadJokes()
-  }, [])
-
-  // Loads all jokes and sets them to jokes
-  function loadJokes() {
-    console.log("also hi")
-    API.getJokes()
+    await API.getJokes()
       .then(res => 
         setJokes(res.data)
       )
       .catch(err => console.log(err));
-  };
+    // loadJokes()
+  }, [])
+
+  // Loads all jokes and sets them to jokes
+  // function loadJokes() {
+  //   console.log("also hi")
+  //   API.getJokes()
+  //     .then(res => 
+  //       setJokes(...jokes, res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
   // function deleteJoke(id) {
   //   API.deleteJokes(id)
