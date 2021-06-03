@@ -61,12 +61,14 @@ function deleteJoke(_id) {
 
     <CardContent className="cardContent">
       <div>
+        
               <div className="jokeCard">
               <div>{joke.joketype}</div>
               <div>{joke.partOne}</div>
               <div>{joke.partTwo}</div>
               </div> 
-    </div>
+
+      </div>
     </CardContent>
 
       <Button 
@@ -81,11 +83,11 @@ function deleteJoke(_id) {
   
     </Card>
 
-    <Button 
+    {/* <Button 
         onClick={deleteJoke(joke._id)} 
         className="btn btn-primary DeleteBtn">
         Delete
-      </Button>
+      </Button> */}
     
     </List>
     ))} 
