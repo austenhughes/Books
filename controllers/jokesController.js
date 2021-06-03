@@ -1,10 +1,9 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the jokesController
 module.exports = {
   findAll: function (req, res) {
-    db.Joke.find()
-      .sort({ date: -1 })
+    db.Joke.find(req.query)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

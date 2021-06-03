@@ -1,14 +1,36 @@
-import React from "react";
-import { Button } from '@material-ui/core';
+// // import React from "react";
+// import React, { useState } from "react";
+// import { Button } from '@material-ui/core';
 
-function SaveNewJokeBtn(props) {
-  return (
-    <Button 
-        onClick={props.handleFormSubmitNewJoke} 
-        className="btn btn-primary SaveNewJokeBtn">
-        SAVE
-    </Button>
-    );
-}
+// import API from "../../utils/API";
 
-export default SaveNewJokeBtn;
+// function SaveNewJokeBtn(props) {
+
+//   const [formObject ] = useState({})
+
+//   function handleFormSubmitNewJoke(event) {
+//     event.preventDefault();
+//     console.log("Hi from over here")
+//     if (formObject.joketype) {
+//       API.saveJokes({
+//         userID: "1",
+//         postID: 1,
+//         joketype: formObject.joketype,
+//         partOne: formObject.partOne,
+//         partTwo: formObject.partTwo
+//       })
+//         // .then(res => loadJokes())
+//         .catch(err => console.log(err));
+//     }
+//   };
+
+//   return (
+//     <Button 
+//         onClick={handleFormSubmitNewJoke} 
+//         className="btn btn-primary SaveNewJokeBtn">
+//         SAVE
+//     </Button>
+//     );
+// }
+
+// export default SaveNewJokeBtn;
