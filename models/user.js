@@ -5,12 +5,6 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
-  savedJokes: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Joke"
-    }
-  ],
 });
 // Add password hashing with Bcrypt
 
