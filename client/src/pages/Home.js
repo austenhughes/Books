@@ -17,9 +17,9 @@ function Home() {
   const [jokes, setJokes] = useState([])
   
   // Load all jokes and store them with setJokes
-  useEffect(async () => {
+  useEffect(() => {
     console.log("hi")
-    await API.getJokes()
+    API.getJokes()
       .then(res => 
         setJokes(res.data)
       )

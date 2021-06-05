@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const jokesController = require("../../controllers/jokesController");
 
+// const { authPerson } = require("../controllers/authController");
+
 // Matches with "/api/jokes"
+// router.route("/", authPerson)
 router.route("/")
   .get(jokesController.findAll)
   .post(jokesController.create);

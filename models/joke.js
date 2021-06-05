@@ -9,7 +9,6 @@ const jokeSchema = new Schema({
   partTwo: { type: String },
 });
 
-
 const Joke = mongoose.model("Joke", jokeSchema);
 
 module.exports = Joke;

@@ -1,6 +1,6 @@
 import React from "react";
 import LogInPageBtn from "../components/LogInPageBtn";
-import SaveNewUserBtn from "../components/SaveNewUserBtn";
+// import SaveNewUserBtn from "../components/SaveNewUserBtn";
 import NewUserForm from "../components/NewUserForm";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,7 +16,7 @@ function NewUser() {
   </Nav> 
   <Container>
   <NewUserForm />
-  <SaveNewUserBtn />
+  {/* <SaveNewUserBtn /> */}
   </Container>
   <Footer />
   </div>       
