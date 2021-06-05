@@ -1,13 +1,40 @@
-// login info: email address & password & an array of jokes that belong to them & ones that they save
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const bcrypt = require("bcrypt");
+// const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-});
+// module.exports = (mongoose) => {
+const userSchema = new mongoose.Schema(
+      {
+        name: {
+          type: String,
+        },
+        email: {
+          type: String,
+        },
+        password: {
+          type: String,
+        },
+      },
+      {
+        timestamps: {
+          createdAt: "created_at",
+          updatedAt: "updated_at",
+        },
+      }
+      );
+
 // Add password hashing with Bcrypt
 
-const User = mongoose.model("User",userSchema);
+  // userSchema.pre("save", async function (next) {
+  //   const hash = await bcrypt.hash(this.password, Number(bcryptSalt));
+  //   this.password = hash;
+  //   next();
+  // });
 
-module.exports = User;
+  const User = mongoose.model("User", userSchema);
+  // return User;
+// };
+
+  // const User = mongoose.model("User",userSchema);
+
+  module.exports = User;

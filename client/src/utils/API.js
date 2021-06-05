@@ -19,5 +19,10 @@ export default {
   // Saves a joke to the database
   saveJokes: function(jokeData) {
     return axios.post("/api/jokes", jokeData);
+  },
+
+  saveUser: function(userData) {
+    return axios.post("/api/user", userData);
   }
+
 };

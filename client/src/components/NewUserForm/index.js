@@ -1,12 +1,49 @@
-import React from "react";
+// import React from "react";
 
+import React, { useState} from "react";
+import { Button } from '@material-ui/core';
+import API from "../../utils/API";
+
+// const bcrypt = require("bcrypt");
 
 function NewUserForm(props) {
+
+  const [newUser, setNewUser] = useState({})
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setNewUser({...newUser, [name]: value})
+    };
+
+  function handleFormSubmitNewUser(event) {
+      event.preventDefault();
+      console.log("Hi from over here we are entering user data")  
+      
+      // if (newUser.email && newUser.password) {
+        API.saveUser({
+          name: newUser.name,
+          email: newUser.email,
+          password: newUser.password,
+        })
+        // .then(res => loadJokes())
+        .catch(err => console.log(err));
+      // }
+    };
+
   return (
     <form>
       <div className="newUserForm">
         <input
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
+          value={props.value}
+          name="name"
+          type="text"
+          className="form-control"
+          placeholder="name"
+          id="name"
+        />
+        <input
+          onChange={handleInputChange}
           value={props.value}
           name="email"
           type="text"
@@ -15,16 +52,7 @@ function NewUserForm(props) {
           id="email"
         />
         <input
-          onChange={props.handleInputChange}
-          value={props.value}
-          name="username"
-          type="text"
-          className="form-control"
-          placeholder="username"
-          id="username"
-        />
-        <input
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
           value={props.value}
           name="password"
           type="text"
@@ -33,6 +61,13 @@ function NewUserForm(props) {
           id="password"
         />
       </div>
+
+      <Button 
+        onClick={handleFormSubmitNewUser} 
+        className="btn btn-primary SaveNewUserBtn">
+        SAVE
+    </Button>
+
     </form>
   );
 }
