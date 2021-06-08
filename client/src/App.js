@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import PersonalPage from "./pages/PersonalPage";
 import NewJoke from "./pages/NewJoke";
 
+// needs some working out 
+
 function App() {
   return (
     <Router>

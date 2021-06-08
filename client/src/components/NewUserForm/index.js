@@ -4,7 +4,7 @@ import React, { useState} from "react";
 import { Button } from '@material-ui/core';
 import API from "../../utils/API";
 
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 function NewUserForm(props) {
 
@@ -18,16 +18,18 @@ function NewUserForm(props) {
   function handleFormSubmitNewUser(event) {
       event.preventDefault();
       console.log("Hi from over here we are entering user data")  
-      
-      // if (newUser.email && newUser.password) {
-        API.saveUser({
-          name: newUser.name,
-          email: newUser.email,
-          password: newUser.password,
-        })
-        // .then(res => loadJokes())
-        .catch(err => console.log(err));
-      // }
+      console.log(newUser.password)
+
+      bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(newUser.password, salt, function(err, hash) {
+            console.log(hash)
+            API.saveUser({
+              name: newUser.name,
+              email: newUser.email,
+              password: hash,
+              })
+        });
+      });
     };
 
   return (

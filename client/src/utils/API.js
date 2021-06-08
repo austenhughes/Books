@@ -20,9 +20,21 @@ export default {
   saveJokes: function(jokeData) {
     return axios.post("/api/jokes", jokeData);
   },
+  
 
+  // user stuff 
   saveUser: function(userData) {
     return axios.post("/api/user", userData);
-  }
+  },
+  // Gets users
+  getUser: function() {
+    return axios.get("/api/user");
+  },
+  
+
+  // // auth routes 
+  // getLogin: function() {
+  //   return axios.get("/api/auth");
+  // }
 
 };
