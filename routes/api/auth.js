@@ -11,9 +11,9 @@ const { authPerson } = require("../../controllers/authController");
 router.post("/", authPerson);
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  console.log("hi im sorta working")
-  res.render("index", { title: "Express" });
-});
+// router.get("/", function (req, res, next) {
+//   console.log("hi im sorta working")
+//   res.render("index", { title: "Express" });
+// });
 
 module.exports = router;

@@ -32,7 +32,7 @@ export default {
   },
   
 
-  // // auth routes 
+  // auth routes 
   // getLogin: function() {
   //   return axios.get("/api/auth");
   // }

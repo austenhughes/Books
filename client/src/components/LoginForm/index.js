@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
+// import API from "../../utils/API";
+
 // import React, { useState} from "react";
 import { Button } from '@material-ui/core';
 
@@ -18,7 +20,8 @@ function LoginForm(props) {
 
 const submitCredentials = async (credentials) => {
     try {
-      const url = "http://localhost:3001/api/auth";
+      console.log(credentials)
+      const url = "/api/auth";
       const fetchResponse = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
@@ -33,6 +36,10 @@ const submitCredentials = async (credentials) => {
         body: JSON.stringify(credentials), // body data type must match "Content-Type" header
       });
       const data = await fetchResponse.json();
+
+      // const fetchResponse = API.getLogin({email, password});
+      
+      // const data = await fetchResponse;
       authContext.setAuthState(data);
       setSignInSuccess(data.message);
       setSignInError(null);

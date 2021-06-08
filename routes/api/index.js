@@ -4,7 +4,7 @@ const userRoutes = require("./user");
 
 // const { authPerson } = require("../controllers/authController");
 
-// const authRoutes = require("./auth");
+const authRoutes = require("./auth");
 
 // Jokes route
 router.use("/jokes", jokeRoutes);
@@ -13,7 +13,7 @@ router.use("/user", userRoutes);
 
 
 // Auth route
-// router.use("/auth", authRoutes);
+router.use("/auth", authRoutes);
 
 // other
 
