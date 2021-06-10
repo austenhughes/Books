@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# The Buffoonery 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Screenshot
 
-## Available Scripts
+  ## User Story
+  
+  * As a user I want to able to view collections of jokes, add my own jokes, and have an option to delete my Dad Jokes.
+  * When arriving to the homepage I am then presented with a mobile responsive website that has a polished interface
+  * On the homepage there is an option to create a new user or to login.
+  * When I create a new user I am taken to the login page.  
+  * When I login I am taken to my personal page.
+  * When I am at my personal page I can then add, save, and delete jokes. 
+  * When I log out I am taken to back to the login page.  
 
-In the project directory, you can run:
+  ## Table of contents
+  - [Technologies Used](#technologies-Used)
+  - [Resources](#resources)
+  - [User Story](#user-Story)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributors](#contributors)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  - [Future Development](#future-Development)
+  - [Deployed Application](#Deployed-Application)
 
-### `npm start`
+  ## Description
+As a user I want to have a place to store my collection of Dad jokes. I want to be able to find new jokes, save the ones I love, and have the option to delete jokes. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ## Installation
+  * no installation required, simply go to the deployed site on heroku.
+  * open your terminal or bash and navigate to the repository you forked 
+  * npm install
+  * npm run start
+  * open a browser and type in localhost:3000
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  ## Usage
+  * Click on the link for the website
+  * When presented with the homepage click the button for either create new user or login. Upon creating a new user you will be directed to the login page. Put in your email and password to access your personal page. Once you're here you have the ability to view joke collections posted by other users, save jokes you find, upload your own jokes, or delete ones off of your personal collection.
 
-### `npm test`
+  ## Future Development
+  * Allow likes on posts
+  * Filter by type of joke
+  * Have the ability to upload an image or meme
+  * Have the ability to share to social media channels
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ## Technologies Used
+  * Material UI
+  * Javascript
+  * CSS 
+  * Node.JS
+  * MySQL 
+  * npm packages installed - bcrypt
+  * npm packages installed - bcryptjs
 
-### `npm run build`
+  ## License
+  ![badge](https://img.shields.io/badge/license-MIT-blue)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  The license covering this application is the MIT license.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ## Contributors
+  * Of course I am a contributor - you can find my contact info at the bottom of the page.
+  * [Austen Hughes](https://github.com/austenhughes) on Github 
+  * [Kari Johnson](https://github.com/Karijayyy) on Github
+  * [Britani Walley](https://github.com/britaniwalley) on Github
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ## Resources
+https://www.npmjs.com/
+https://material-ui.com/
 
-### `npm run eject`
+  ## Deployed Application
+[You can visit our site on heroku]()
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ## Tests
+  This application was tested by the developers
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ## Questions
+Contact us on Github or reach out via email 
+ 
+ <!-- <a href="https://drive.google.com/file/d/1PtvgUG9kvXFnMEaekvSjFSfgDrUur8qf/view?usp=sharing" target="_blank">heres a walkthrough of the application if you need further review!</a> -->
+ 
