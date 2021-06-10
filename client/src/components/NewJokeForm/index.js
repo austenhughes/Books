@@ -1,10 +1,14 @@
 // import React from "react";
+import { Redirect } from "react-router-dom";
 import React, { useState} from "react";
 import { Button } from '@material-ui/core';
+// import { Dropdown } from 'react-bootstrap';
 
 import API from "../../utils/API";
 
 function NewJokeForm(props) {
+
+  const [redirectOnCreate, setRedirectOnCreate] = useState(false);
 
   // const [jokes, setJokes] = useState([])
   const [newJoke, setNewJoke] = useState({})
@@ -16,6 +20,11 @@ function NewJokeForm(props) {
 
   function handleFormSubmitNewJoke(event) {
       event.preventDefault();
+
+      setTimeout(() => {
+      setRedirectOnCreate(true);
+      }, 500);
+
       console.log("Hi from over here")  
       // if (newJoke.partOne) {
         API.saveJokes({
@@ -31,6 +40,8 @@ function NewJokeForm(props) {
     };
 
   return (
+    <div>
+    {redirectOnCreate && <Redirect to="/home" />}
     <form>
       <div className="newJokeForm">
         <input
@@ -51,6 +62,9 @@ function NewJokeForm(props) {
           placeholder="Joke ID"
           id="jokeID"
         />
+
+        {/*  many need to change back  */}
+
         <input
           onChange={handleInputChange}
           value={props.value}
@@ -60,6 +74,12 @@ function NewJokeForm(props) {
           placeholder="Joke type"
           id="joketype"
         />
+
+        {/* <select className="dropdown" value={props.value} onChange={handleInputChange}> 
+          <option className="dropdownItem" name="joketype" value="one">One</option>
+          <option className="dropdownItem" name="joketype" value="two">Two</option>
+        </select> */}
+
         <input
           onChange={handleInputChange}
           value={props.value}
@@ -87,6 +107,7 @@ function NewJokeForm(props) {
       </Button>
 
     </form>
+    </div>
   );
 }
 
