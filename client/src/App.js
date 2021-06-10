@@ -37,7 +37,7 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-          <AuthenticatedRoute path="/home">
+          <AuthenticatedRoute path={["/home", "/yourJokes", "/newJoke"]}>
           <Route exact path={["/", "/home"]}>
               <Home />
            </Route>
@@ -47,12 +47,6 @@ const AppRoutes = () => {
           <Route exact path="/newJoke">
              <NewJoke />
            </Route>
-           {/* <Route exact path="/newUser">
-             <NewUser />
-          </Route> */}
-           {/* <Route exact path="/Login">
-             <Login />
-           </Route> */}
            <Route>
              <NoMatch />
            </Route>
