@@ -1,5 +1,5 @@
 // import React from "react";
-
+import { Redirect } from "react-router-dom";
 import React, { useState} from "react";
 import { Button } from '@material-ui/core';
 import API from "../../utils/API";
@@ -7,6 +7,8 @@ import API from "../../utils/API";
 const bcrypt = require("bcryptjs");
 
 function NewUserForm(props) {
+
+  const [redirectOnCreate, setRedirectOnCreate] = useState(false);
 
   const [newUser, setNewUser] = useState({})
 
@@ -17,6 +19,11 @@ function NewUserForm(props) {
 
   function handleFormSubmitNewUser(event) {
       event.preventDefault();
+
+      setTimeout(() => {
+      setRedirectOnCreate(true);
+      }, 500);
+
       console.log("Hi from over here we are entering user data")  
       console.log(newUser.password)
 
@@ -33,6 +40,8 @@ function NewUserForm(props) {
     };
 
   return (
+    <div>
+       {redirectOnCreate && <Redirect to="/login" />}
     <form>
       <div className="newUserForm">
         <input
@@ -71,6 +80,7 @@ function NewUserForm(props) {
     </Button>
 
     </form>
+    </div>
   );
 }
 
