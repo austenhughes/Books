@@ -63,5 +63,5 @@ const authPerson = async (req, res) => {
 };
 
 module.exports = {
-  authPerson,
+  authPerson
 };

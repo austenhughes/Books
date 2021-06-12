@@ -8,7 +8,7 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    db.Joke.findById(req.params.id)
+    db.Joke.find({userID: req.params.id})
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

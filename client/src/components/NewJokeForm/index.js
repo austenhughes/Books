@@ -10,7 +10,6 @@ function NewJokeForm(props) {
 
   const [redirectOnCreate, setRedirectOnCreate] = useState(false);
 
-  // const [jokes, setJokes] = useState([])
   const [newJoke, setNewJoke] = useState({})
 
   function handleInputChange(event) {
@@ -20,23 +19,24 @@ function NewJokeForm(props) {
 
   function handleFormSubmitNewJoke(event) {
       event.preventDefault();
+      const user = localStorage.getItem("userInfo")
+      const userInfo = JSON.parse(user)
+      console.log(userInfo[0]._id)
+
+      // const id = req.body.userInfo._id
 
       setTimeout(() => {
       setRedirectOnCreate(true);
       }, 500);
 
       console.log("Hi from over here")  
-      // if (newJoke.partOne) {
         API.saveJokes({
-          userID: newJoke.userID,
-          jokeID: newJoke.jokeID,
+          userID: userInfo[0]._id,
           joketype: newJoke.joketype,
           partOne: newJoke.partOne,
           partTwo: newJoke.partTwo
         })
-        // .then(res => loadJokes())
         .catch(err => console.log(err));
-      // }
     };
 
   return (
@@ -44,7 +44,7 @@ function NewJokeForm(props) {
     {redirectOnCreate && <Redirect to="/home" />}
     <form>
       <div className="newJokeForm">
-        <input
+        {/* <input
           onChange={handleInputChange}
           value={props.value}
           name="userID"
@@ -61,7 +61,7 @@ function NewJokeForm(props) {
           className="form-control"
           placeholder="Joke ID"
           id="jokeID"
-        />
+        /> */}
 
         {/*  many need to change back  */}
 

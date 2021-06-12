@@ -1,17 +1,11 @@
 import React from 'react';
-
+// import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
-import SaveToLibraryBtn from "../SaveToLibraryBtn";
-// import DeleteBtn from "../DeleteBtn";
 import { Button } from '@material-ui/core';
 
 import API from "../../utils/API";
-
 import { List } from "../List";
 
 const useStyles = makeStyles({
@@ -31,17 +25,30 @@ const useStyles = makeStyles({
   },
 });
 
-
 export default function JokeCard(props) {
-
+  
 const classes = useStyles();
 console.log(props)
 
-function deleteJoke(_id) {
-  console.log(_id)
-    API.deleteJokes(_id)
-      .catch(err => console.log(err));
-  }
+function saveJoke(joke){
+  const user = localStorage.getItem("userInfo")
+  const userInfo = JSON.parse(user)
+  const userID = userInfo[0]._id
+  console.log(joke)
+
+  API.getUsersById(userID)
+
+  let newSavedJokesData = []
+  let savedJokesData = userInfo[0].savedJokes
+  newSavedJokesData = savedJokesData.push(joke)
+  // newSavedJokesData = newSavedJokesData.push(joke)
+  console.log(savedJokesData)
+  console.log(newSavedJokesData)
+
+  API.saveJokeToUser(userID, 
+    {savedJokes : savedJokesData})
+  console.log(userInfo)
+}
 
   return (
     <div>
@@ -51,44 +58,25 @@ function deleteJoke(_id) {
 
     <Card className={classes.root} variant="outlined">
 
-      {/* <CardContent className="cardContent">
-        <div className="jokeTitle"> Joke title </div>
-        <div className="part1"> part 1 </div>
-        <div className="part2"> part 2 </div>
-        <div className="time"> time </div>
-        <div className="username"> Username </div>
-      </CardContent> */}
-
     <CardContent className="cardContent">
+
       <div>
-        
               <div className="jokeCard">
               <div>{joke.joketype}</div>
               <div>{joke.partOne}</div>
               <div>{joke.partTwo}</div>
               </div> 
-
       </div>
+
     </CardContent>
 
       <Button 
-        onClick={ () => deleteJoke(joke._id)} 
-        className="btn btn-primary DeleteBtn">
-        Delete
+        onClick={ () => saveJoke(joke)} 
+        className="btn btn-primary saveBtn">
+        save
       </Button>
-
-      {/* <DeleteBtn onClick={() => deleteJoke(joke._id)} /> */}
-
-      <SaveToLibraryBtn />
   
     </Card>
-
-    {/* <Button 
-        onClick={deleteJoke(joke._id)} 
-        className="btn btn-primary DeleteBtn">
-        Delete
-      </Button> */}
-    
     </List>
     ))} 
     </div>
