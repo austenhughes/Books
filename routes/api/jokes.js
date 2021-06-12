@@ -1,17 +1,14 @@
 const router = require("express").Router();
 const jokesController = require("../../controllers/jokesController");
 
-// const { authPerson } = require("../controllers/authController");
-
 // Matches with "/api/jokes"
-// router.route("/", authPerson)
 router.route("/")
   .get(jokesController.findAll)
   .post(jokesController.create);
 
 // Matches with "/api/jokes/:id"
-router
-  .route("/:id")
+router.route("/:id")
+// this one will/should find by user id :)
   .get(jokesController.findById)
   .put(jokesController.update)
   .delete(jokesController.remove);

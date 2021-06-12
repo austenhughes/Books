@@ -4,6 +4,7 @@ import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import PersonalPage from "./pages/PersonalPage";
 import NewJoke from "./pages/NewJoke";
+import OwnJokes from "./pages/OwnJokes";
 
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import React, { Suspense, useContext } from "react";
@@ -37,12 +38,15 @@ const AppRoutes = () => {
     <>
       <Suspense fallback={<h1>Loading...</h1>}>
         <Switch>
-          <AuthenticatedRoute path={["/home", "/yourJokes", "/newJoke"]}>
+          <AuthenticatedRoute path={["/home", "/yourJokes", "/newJoke", "/ownJokes"]}>
           <Route exact path={["/", "/home"]}>
               <Home />
            </Route>
           <Route exact path="/yourJokes">
              <PersonalPage />
+           </Route>
+           <Route exact path="/ownJokes">
+             <OwnJokes />
            </Route>
           <Route exact path="/newJoke">
              <NewJoke />
