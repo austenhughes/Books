@@ -1,10 +1,11 @@
-import React from 'react';
+// import React from 'react';
+import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { Button } from '@material-ui/core';
 
-// import API from "../../utils/API";
+import API from "../../utils/API";
 import { List } from "../List";
 
 const useStyles = makeStyles({
@@ -27,9 +28,49 @@ const useStyles = makeStyles({
 export default function SavedJokeCard(props) {
 const classes = useStyles();
 
-console.log(props.jokes[0])
-// var myJokes =JSON.parse(JSON.stringify(props.jokes[0]));
-// console.log(myJokes.savedJokes);
+const [jokes, setJokes] = useState([])
+  
+  // Load user and store them with setJokes
+  useEffect(() => {
+    console.log("hi")
+    loadJokes()
+  }, [])
+
+  // Loads current user and sets them to jokes
+  function loadJokes() {
+    const user = localStorage.getItem("userInfo")
+    const userInfo = JSON.parse(user)
+    const userID = userInfo[0]._id
+    console.log("also hi")
+    API.getUsersById(userID)
+      .then(res => {
+        console.log(res.data)
+        setJokes(res.data[0].savedJokes)
+        // setJokes(res.data[0])
+        // console.log(jokes)
+  })
+      .catch(err => console.log(err));
+  };
+
+  console.log(jokes[0])
+  // console.log(res.data)
+
+
+// above here is a try thing 
+
+// console.log(props.jokes[0])
+// const saved = props.jokes[0]
+// console.log(saved)
+// const jokes = JSON.stringify(saved)
+// console.log(jokes)
+
+// console.log(props.jokes[0].savedJokes)
+
+// this works but wrong 
+// const user = localStorage.getItem("userInfo")
+// const userInfo = JSON.parse(user)
+// const savedJokes = userInfo[0].savedJokes
+// console.log(savedJokes)
 
 // need to rework for delete from saved
 function deleteJoke(_id) {
@@ -40,7 +81,7 @@ function deleteJoke(_id) {
 
   return (
     <div>
-    {props.jokes.map(joke => (
+    {jokes.map(joke => (
       
     <List key={joke._id} >
 
