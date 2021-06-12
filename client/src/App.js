@@ -50,10 +50,10 @@ const AppRoutes = () => {
            </Route>
           <Route exact path="/newJoke">
              <NewJoke />
+           {/* </Route>
+           <Route>
+             <NoMatch /> */}
            </Route>
-           {/* <Route>
-             <NoMatch />
-           </Route> */}
           </AuthenticatedRoute>
           <UnauthenticatedRoutes />
         </Switch>
