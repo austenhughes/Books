@@ -1,6 +1,5 @@
 import React from "react";
 import CreateNewUserBtn from "../components/CreateNewUserBtn";
-// import LogInBtn from "../components/LogInBtn";
 import LoginForm from "../components/LoginForm";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -16,7 +15,6 @@ function Login() {
   </Nav> 
   <Container>
   <LoginForm />
-  {/* <LogInBtn /> */}
   </Container>
   <Footer />
   </div>       

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -25,20 +26,26 @@ const useStyles = makeStyles({
 });
 
 export default function OwnJokeCard(props) {
-  
+const history = useHistory();
+
 const classes = useStyles();
 console.log(props)
 
 function deleteJoke(_id) {
+  // reset page
+  setTimeout(() => {
+    history.go(0)
+    }, 500);
+
   console.log(_id)
-    API.deleteJokes(_id)
-      .catch(err => console.log(err));
+  API.deleteJokes(_id)
+  .catch(err => console.log(err));
   }
 
   return (
     <div>
     {props.jokes.map(joke => (
-      
+    
     <List key={joke._id} >
 
     <Card className={classes.root} variant="outlined">
@@ -63,6 +70,7 @@ function deleteJoke(_id) {
   
     </Card>
     </List>
+    
     ))} 
     </div>
   );
