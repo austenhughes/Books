@@ -1,6 +1,5 @@
 import NewUser from "./pages/NewUser";
 import Login from "./pages/Login";
-// import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import PersonalPage from "./pages/PersonalPage";
 import NewJoke from "./pages/NewJoke";
@@ -50,9 +49,6 @@ const AppRoutes = () => {
            </Route>
           <Route exact path="/newJoke">
              <NewJoke />
-           {/* </Route>
-           <Route>
-             <NoMatch /> */}
            </Route>
           </AuthenticatedRoute>
           <UnauthenticatedRoutes />

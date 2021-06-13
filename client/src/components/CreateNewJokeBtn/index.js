@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from '@material-ui/core';
 
-function CreateNewJokeBtn(props) {
+function CreateNewJokeBtn() {
   return (
     <Button href="/newJoke" target="_">
     <input type="button" value="New Joke"/>

@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useState, useEffect } from "react";
 import CreateNewJokeBtn from "../components/CreateNewJokeBtn";
 import PersonalPageBtn from "../components/PersonalPageBtn";

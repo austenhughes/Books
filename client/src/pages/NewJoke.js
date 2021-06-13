@@ -2,7 +2,6 @@ import React from "react";
 import HomePageBtn from "../components/HomePageBtn";
 import PersonalPageBtn from "../components/PersonalPageBtn";
 import LogOutBtn from "../components/LogOutBtn";
-// import SaveNewJokeBtn from "../components/SaveNewJokeBtn";
 import OwnJokesBtn from "../components/OwnJokesBtn";
 import NewJokeForm from "../components/NewJokeForm";
 import Header from "../components/Header";
@@ -22,7 +21,6 @@ function NewJoke() {
   </Nav> 
   <Container>
   <NewJokeForm />
-  {/* <SaveNewJokeBtn /> */}
   </Container>
   <Footer />
   </div>       

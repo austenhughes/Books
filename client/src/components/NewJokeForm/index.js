@@ -44,25 +44,7 @@ function NewJokeForm(props) {
     {redirectOnCreate && <Redirect to="/home" />}
     <form>
       <div className="newJokeForm">
-        {/* <input
-          onChange={handleInputChange}
-          value={props.value}
-          name="userID"
-          type="text"
-          className="form-control"
-          placeholder="User ID"
-          id="userID"
-        />
-        <input
-          onChange={handleInputChange}
-          value={props.value}
-          name="jokeID"
-          type="text"
-          className="form-control"
-          placeholder="Joke ID"
-          id="jokeID"
-        /> */}
-
+       
         {/*  many need to change back  */}
 
         <input

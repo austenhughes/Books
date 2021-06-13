@@ -46,38 +46,47 @@ const [jokes, setJokes] = useState([])
       .then(res => {
         console.log(res.data)
         setJokes(res.data[0].savedJokes)
-        // setJokes(res.data[0])
-        // console.log(jokes)
   })
       .catch(err => console.log(err));
   };
 
-  console.log(jokes[0])
-  // console.log(res.data)
-
-
-// above here is a try thing 
-
-// console.log(props.jokes[0])
-// const saved = props.jokes[0]
-// console.log(saved)
-// const jokes = JSON.stringify(saved)
-// console.log(jokes)
-
-// console.log(props.jokes[0].savedJokes)
-
-// this works but wrong 
-// const user = localStorage.getItem("userInfo")
-// const userInfo = JSON.parse(user)
-// const savedJokes = userInfo[0].savedJokes
-// console.log(savedJokes)
-
 // need to rework for delete from saved
-function deleteJoke(_id) {
-  console.log(_id)
-    // API.deleteJokes(_id)
-      .catch(err => console.log(err));
-  }
+// function deleteJoke(_id) {
+  // console.log(_id)
+  //   // API.deleteJokes(_id)
+  // .catch(err => console.log(err));
+
+  function getUserId (joke){
+    const user = localStorage.getItem("userInfo")
+    const userInfo = JSON.parse(user)
+    const userID = userInfo[0]._id
+    API.getUsersById(userID)
+    .then(res => {
+      console.log(joke._id)
+      console.log(res.data)
+      setJokes(res.data[0].savedJokes)
+      console.log(res.data[0].savedJokes)
+      let myjokes = res.data[0].savedJokes
+      console.log(myjokes)
+      deleteJoke ()
+      
+      function deleteJoke(){
+        console.log(myjokes)
+        console.log(joke)
+        
+        var filtered = myjokes.filter(function(el) { return el._id !== joke._id; });
+        console.log(filtered)
+
+        API.saveJokeToUser(userID, 
+        {savedJokes : filtered})
+        loadJokes()
+      }
+
+    })
+    .catch(err => console.log(err));
+    }
+
+  // }
 
   return (
     <div>
@@ -100,7 +109,7 @@ function deleteJoke(_id) {
     </CardContent>
 
       <Button 
-        onClick={ () => deleteJoke()} 
+        onClick={ () => getUserId(joke)} 
         className="btn btn-primary DeleteBtn">
         Delete
       </Button>

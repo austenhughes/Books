@@ -33,7 +33,7 @@ export default {
     return axios.get("/api/user/" + id);
   },
 
-  // saving favorites
+  // saving/rewriting favorites
   saveJokeToUser: function(id, jokeData) {
     return axios.put("/api/user/" + id, jokeData);
   },

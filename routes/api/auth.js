@@ -3,6 +3,6 @@ const { authPerson } = require("../../controllers/authController");
 
 router.post("/", authPerson);
 
-router.get("/:id")
+// router.get("/:id")
 
 module.exports = router;
