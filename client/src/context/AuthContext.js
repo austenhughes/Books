@@ -9,12 +9,13 @@ const AuthProvider = ({ children }) => {
 
   const token = localStorage.getItem("token");
   const userInfo = localStorage.getItem("userInfo");
+  const parsedUserInfo = JSON.parse(userInfo)
   const expiresAt = localStorage.getItem("expiresAt");
 
   const [authState, setAuthState] = useState({
     token,
     expiresAt,
-    userInfo: userInfo 
+    userInfo: parsedUserInfo
     // ? JSON.parse(userInfo) : {},
   });
 
