@@ -27,6 +27,10 @@ const useStyles = makeStyles({
     marginLeft: "auto",
     marginRight: "auto",
     margin: "5px",
+  },
+  center: {
+    marginLeft: "auto",
+    marginRight: "auto",
   }
 });
 
@@ -67,10 +71,10 @@ function NewJokeForm(props) {
     };
 
   return (
-    <div>
+    <div className={classes.center}>
     {redirectOnCreate && <Redirect to="/home" />}
     <form>
-      <div className="newJokeForm">
+      <div className={classes.form}>
        
         {/*  many need to change back  */}
 
@@ -108,14 +112,15 @@ function NewJokeForm(props) {
           placeholder="Part 2"
           id="PartTwo"
         />
-      </div>
+        <br/>
+      {/* </div> */}
 
       <Button 
         onClick={handleFormSubmitNewJoke} 
         className="btn btn-primary SaveNewJokeBtn">
         <input className={classes.button} value="save"/>
       </Button>
-
+      </div>
     </form>
     </div>
   );

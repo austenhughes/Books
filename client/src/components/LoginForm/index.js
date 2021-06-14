@@ -87,7 +87,7 @@ const submitCredentials = async (credentials) => {
 
   return (
 
-    <div>
+    <div className={classes.form}>
     {redirectOnSignIn && <Redirect to="/home" />}
     {signInSuccess && <h1>success</h1>}
     {signInError && <h1>Error: {signInError} </h1>}
