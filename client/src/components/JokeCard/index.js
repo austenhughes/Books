@@ -6,23 +6,29 @@ import CardContent from '@material-ui/core/CardContent';
 import { Button } from '@material-ui/core';
 
 import API from "../../utils/API";
-import { List } from "../List";
+// import { List } from "../List";
 
 const useStyles = makeStyles({
   root: {
+    borderRadius: "18px",
     minWidth: 275,
+    width: "65%",
+    fontSize: "20px",
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
+    borderStyle: "solid",
+    borderWidth: "5px",
+    borderColor: "black",
+    margin: "10px",
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+  button: {
+    borderRadius: "18px",
+    backgroundColor: "#FFEE32",
+    fontSize : "20px",
+    textAlign: "center",
+    width: "40%"
+  }
 });
 
 export default function JokeCard(props) {
@@ -35,28 +41,29 @@ export default function JokeCard(props) {
   
   // Load user and store them with setJokes
   useEffect(() => {
-    console.log("hi")
+    // console.log("hi")
+    // console.log(jokes)
     // getUserId()
   }, [])
 
   function getUserId (joke){
     API.getUsersById(userID)
     .then(res => {
-      console.log(joke)
-      console.log(res.data)
+      // console.log(joke)
+      // console.log(res.data)
       setJokes(res.data[0].savedJokes)
       console.log(res.data[0].savedJokes)
       const myjokes = res.data[0].savedJokes
-      console.log(myjokes)
+      // console.log(myjokes)
       saveJoke ()
       
       function saveJoke(){
-        console.log(myjokes)
-        console.log(joke)
+        // console.log(myjokes)
+        // console.log(joke)
         let newSavedJokesData = []
         let savedJokesData = myjokes
         newSavedJokesData = savedJokesData.push(joke)
-        console.log(savedJokesData)
+        // console.log(savedJokesData)
 
         // only lets you save a joke once 
         var obj = {};
@@ -65,7 +72,7 @@ export default function JokeCard(props) {
         savedJokesData = new Array();
         for ( var key in obj )
         savedJokesData.push(obj[key]);
-        console.log(savedJokesData)
+        // console.log(savedJokesData)
 
         API.saveJokeToUser(userID, 
         {savedJokes : savedJokesData})
@@ -76,13 +83,13 @@ export default function JokeCard(props) {
     }
   
 const classes = useStyles();
-console.log(props)
+// console.log(props)
 
   return (
     <div>
     {props.jokes.map(joke => (
       
-    <List key={joke._id} >
+    <div key={joke._id} >
 
     <Card className={classes.root} variant="outlined">
 
@@ -99,13 +106,14 @@ console.log(props)
     </CardContent>
 
       <Button 
+        // className={classes.root}
         onClick={ () => getUserId(joke)} 
         className="btn btn-primary saveBtn">
-        save
+        <input className={classes.button} value="save"/>
       </Button>
   
     </Card>
-    </List>
+    </div>
     ))} 
     </div>
   );

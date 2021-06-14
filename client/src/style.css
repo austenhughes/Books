@@ -9,3 +9,12 @@ body {
     background-color: #D6D6D6;
   };
 
+input {
+  border-radius: "18px";
+  background-color: "#FFEE32";
+  font-size : "20px";
+  text-align: "center";
+  width: "40%";
+  margin-left: "auto";
+  margin-right: "auto";
+}

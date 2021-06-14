@@ -18,7 +18,7 @@ function Home() {
   
   // Load all jokes and store them with setJokes
   useEffect(() => {
-    console.log("hi")
+    // console.log("hi")
     API.getJokes()
       .then(res => 
         setJokes(res.data)

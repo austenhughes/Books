@@ -6,23 +6,29 @@ import CardContent from '@material-ui/core/CardContent';
 import { Button } from '@material-ui/core';
 
 import API from "../../utils/API";
-import { List } from "../List";
+// import { List } from "../List";
 
 const useStyles = makeStyles({
   root: {
+    borderRadius: "18px",
     minWidth: 275,
+    width: "65%",
+    fontSize: "20px",
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
+    borderStyle: "solid",
+    borderWidth: "5px",
+    borderColor: "black",
+    margin: "10px",
   },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+  button: {
+    borderRadius: "18px",
+    backgroundColor: "#FFEE32",
+    fontSize : "20px",
+    textAlign: "center",
+    width: "40%"
+  }
 });
 
 export default function SavedJokeCard(props) {
@@ -32,7 +38,7 @@ const [jokes, setJokes] = useState([])
   
   // Load user and store them with setJokes
   useEffect(() => {
-    console.log("hi")
+    // console.log("hi")
     loadJokes()
   }, [])
 
@@ -41,10 +47,10 @@ const [jokes, setJokes] = useState([])
     const user = localStorage.getItem("userInfo")
     const userInfo = JSON.parse(user)
     const userID = userInfo[0]._id
-    console.log("also hi")
+    // console.log("also hi")
     API.getUsersById(userID)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         setJokes(res.data[0].savedJokes)
   })
       .catch(err => console.log(err));
@@ -62,20 +68,20 @@ const [jokes, setJokes] = useState([])
     const userID = userInfo[0]._id
     API.getUsersById(userID)
     .then(res => {
-      console.log(joke._id)
-      console.log(res.data)
+      // console.log(joke._id)
+      // console.log(res.data)
       setJokes(res.data[0].savedJokes)
       console.log(res.data[0].savedJokes)
       let myjokes = res.data[0].savedJokes
-      console.log(myjokes)
+      // console.log(myjokes)
       deleteJoke ()
       
       function deleteJoke(){
-        console.log(myjokes)
-        console.log(joke)
+        // console.log(myjokes)
+        // console.log(joke)
         
         var filtered = myjokes.filter(function(el) { return el._id !== joke._id; });
-        console.log(filtered)
+        // console.log(filtered)
 
         API.saveJokeToUser(userID, 
         {savedJokes : filtered})
@@ -92,7 +98,7 @@ const [jokes, setJokes] = useState([])
     <div>
     {jokes.map(joke => (
       
-    <List key={joke._id} >
+    <div key={joke._id} >
 
     <Card className={classes.root} variant="outlined">
 
@@ -111,11 +117,11 @@ const [jokes, setJokes] = useState([])
       <Button 
         onClick={ () => getUserId(joke)} 
         className="btn btn-primary DeleteBtn">
-        Delete
+        <input className={classes.button} value="delete"/>
       </Button>
 
     </Card>
-    </List>
+    </div>
     ))} 
     </div>
   );
