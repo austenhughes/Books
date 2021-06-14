@@ -66,7 +66,7 @@ function NewUserForm(props) {
     };
 
   return (
-    <div>
+    <div className={classes.form}>
        {redirectOnCreate && <Redirect to="/login" />}
     <form>
       <div className="newUserForm">
