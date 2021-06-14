@@ -3,10 +3,37 @@ import { Redirect } from "react-router-dom";
 import React, { useState} from "react";
 import { Button } from '@material-ui/core';
 // import { Dropdown } from 'react-bootstrap';
+import { makeStyles } from '@material-ui/core/styles';
 
 import API from "../../utils/API";
 
+const useStyles = makeStyles({
+  button: {
+    borderRadius: "18px",
+    backgroundColor: "#FFEE32",
+    fontSize : "20px",
+    textAlign: "center",
+    width: "40%",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  form: {
+    borderRadius: "18px",
+    // backgroundColor: "#FFEE32",
+    fontSize : "20px",
+    textAlign: "center",
+    width: "65%",
+    height: "50px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    margin: "5px",
+  }
+});
+
+// import API from "../../utils/API";
+
 function NewJokeForm(props) {
+  const classes = useStyles();
 
   const [redirectOnCreate, setRedirectOnCreate] = useState(false);
 
@@ -52,7 +79,7 @@ function NewJokeForm(props) {
           value={props.value}
           name="joketype"
           type="text"
-          className="form-control"
+          className={classes.form}
           placeholder="Joke type"
           id="joketype"
         />
@@ -67,16 +94,17 @@ function NewJokeForm(props) {
           value={props.value}
           name="partOne"
           type="text"
-          className="form-control"
+          className={classes.form}
           placeholder="Part 1"
           id="PartOne"
         />
         <input
+          // className={classes.button}
           onChange={handleInputChange}
           value={props.value}
           name="partTwo"
           type="text"
-          className="form-control"
+          className={classes.form}
           placeholder="Part 2"
           id="PartTwo"
         />
@@ -85,7 +113,7 @@ function NewJokeForm(props) {
       <Button 
         onClick={handleFormSubmitNewJoke} 
         className="btn btn-primary SaveNewJokeBtn">
-        SAVE
+        <input className={classes.button} value="save"/>
       </Button>
 
     </form>

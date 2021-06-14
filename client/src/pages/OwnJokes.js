@@ -18,7 +18,7 @@ function OwnJokes() {
   
   // Load all jokes and store them with setJokes
   useEffect(() => {
-    console.log("hi")
+    // console.log("hi")
     loadJokes()
   }, [])
 
@@ -27,7 +27,7 @@ function OwnJokes() {
     const user = localStorage.getItem("userInfo")
     const userInfo = JSON.parse(user)
     const userID = userInfo[0]._id
-    console.log("also hi")
+    // console.log("also hi")
     API.getJokesById(userID)
       .then(res => 
         setJokes(res.data)
