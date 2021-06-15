@@ -44,7 +44,48 @@ const jokeSeed = [
     partOne: 'When does a joke become a “dad joke?”',
     partTwo:'When it becomes apparent.'
   },
- 
+  {
+    userID: "1",
+    jokeID: 1,
+    joketype:'Dumb',
+    partOne: 'Yesterday I spotted an albino dalmation',
+    partTwo:'It was the least I could do for him.'
+  },
+  {
+    userID: "1",
+    jokeID: 1,
+    joketype:'Question and Answer',
+    partOne: 'Why are bigger rocks braver than the rest?',
+    partTwo:'Because they are boulder.'
+  },
+  {
+    userID: "1",
+    jokeID: 1,
+    joketype:'Question and Answer',
+    partOne: 'What kind of dogs do computer programmers have?',
+    partTwo:'Computer Labs'
+  },
+  {
+    userID: "1",
+    jokeID: 1,
+    joketype:'Dumb',
+    partOne: 'Shout out to my Grandma',
+    partTwo:'Its the only way she will hear you'
+  },
+  {
+    userID: "1",
+    jokeID: 1,
+    joketype:'Question and Answer',
+    partOne: 'What do you call a tired tornado?',
+    partTwo:'Winded'
+  },
+  {
+    userID: "1",
+    jokeID: 1,
+    joketype:'Dumb',
+    partOne: 'You gotta hand it to short people',
+    partTwo:'Because they cant reach'
+  },
 ];
 
 db.Joke.remove({})
