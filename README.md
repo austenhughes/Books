@@ -1,6 +1,7 @@
 # The Buffoonery 
 
 ## Screenshot
+<img src="https://docs.google.com/document/d/1zB9ZiI7qT3Y8guK7IXoz2QoafTqkQevsxGenz8uSU0M/edit?usp=sharing" alt = "the buffoonery homepage"
 
   ## User Story
   
@@ -67,11 +68,13 @@ As a user I want to have a place to store my collection of Dad jokes. I want to 
   * [Britani Walley](https://github.com/britaniwalley) on Github
 
   ## Resources
-https://www.npmjs.com/
-https://material-ui.com/
+* https://www.npmjs.com/
+* https://material-ui.com/
+* [Background images](https://unsplash.com/)
+
 
   ## Deployed Application
-[You can visit our site on heroku]()
+[You can visit our site on heroku](https://arcane-sands-38677.herokuapp.com/)
 
 
   ## Tests
@@ -80,5 +83,5 @@ https://material-ui.com/
   ## Questions
 Contact us on Github or reach out via email 
  
- <!-- <a href="https://drive.google.com/file/d/1PtvgUG9kvXFnMEaekvSjFSfgDrUur8qf/view?usp=sharing" target="_blank">heres a walkthrough of the application if you need further review!</a> -->
+ <a href="https://drive.google.com/file/d/1SjeTmu9enRMuml9Hq1VjpyJZNKqzwc3O/view" target="_blank">heres a walkthrough of the application if you need further review!</a>
  
